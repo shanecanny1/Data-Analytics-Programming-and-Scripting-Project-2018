@@ -18,6 +18,8 @@ Sepalwidth = data[:,3]
 
 # Test for Generating a Histogram Plot for Petal Length
 plt.hist(Petallength)
+plt.xlabel("Length")
+plt.ylabel("Qty")
 plt.show()
 
 
