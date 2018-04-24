@@ -1,0 +1,15 @@
+import numpy as np
+from scipy import stats
+
+data = np.genfromtxt('irisdata/iris.csv',delimiter=',')
+SetosadataSepallength = data[0:50:,0]
+
+
+
+k2, p = stats.normaltest(SetosadataSepallength)
+alpha = 1e-3
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: x comes from a normal distribution
+     print("The null hypothesis can be rejected")
+else:
+     print("The null hypothesis cannot be rejected")
