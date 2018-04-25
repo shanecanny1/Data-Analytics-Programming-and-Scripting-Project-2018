@@ -1,0 +1,492 @@
+# Project 2018 Part 13 Updating to Complete 2 Sample t testing and boxplots
+
+# Import Numpy Library
+import numpy
+
+# Import Panda Lbrary
+import pandas as pd 
+
+# Import Matplotlib Library for Generating Graphs
+import matplotlib.pyplot as plt
+
+
+# Import Scipy Library
+import scipy.stats as stats
+
+
+# Assigning Headings to Each Column
+col_Names=["SepalLength", "SepalWidth", "PetalLength", "PetalWidth", "Class"] # Assigning Headings to Each Colunm
+data = pd.read_csv('irisdata/iris.csv',names=col_Names) # Assigning the data set to the pandas library with each column labeled
+Setosadata = data.iloc[0:50] # Assigning Setosadata to rows 0 to 49
+Versicolor = data.iloc [50:100] # Assigning Versicolor to rows 50 to 100
+Virginica = data.iloc [100:150] # Assigning Virginica to rows 100 to 150
+
+data = numpy.genfromtxt('irisdata/iris.csv',delimiter=',') # Assigning Data to numpy library 
+
+# Assigning Data to the Setosa Iris
+
+SetosadataSepallength = data[0:50:,0] # Assigning the Setosa Iris Sepal Length data for 0 to row 50 in the First Column
+SetosadataSepalwidth = data[0:50:,1] # Assigning the Setosa Iris Sepal Width data for 0 to row 50 in the Second Column
+SetosadataPetallength = data[0:50:,2] # Assigning the Setosa Iris Petal Length data for 0 to row 50 in the Third Column
+SetosadataPetalwidth = data[0:50:,3] # Assigning the Setosa Iris Pepal Width data for 0 to row 50 in the Fourth Column
+
+# Assigning Data to the Versicolor Iris
+
+VersicolordataSepallength = data[50:100:,0] # Assigning the Versicolor Iris Sepal Length data for 50 to row 100 in the First Column
+VersicolordataSepalwidth = data[50:100:,1] # Assigning the Versicolor Iris Sepal Width data for 50 to row 100 in the Second Column
+VersicolordataPetallength = data[50:100:,2] # Assigning the Versicolor Iris Petal Length data for 50 to row 100 in the Third Column
+VersicolordataPetalwidth = data[50:100:,3] # Assigning the Versicolor Iris Pepal Width data for 50 to row 100 in the Fourth Column
+
+# Assigning Data to the Virginica Iris
+
+VirginicadataSepallength = data[100:150:,0] # Assigning the Virginica Iris Sepal Length data for 100 to row 150 in the First Column
+VirginicadataSepalwidth = data[100:150:,1] # Assigning the Virginica Iris Sepal Width data for 100 to row 150 in the Second Column
+VirginicadataPetallength = data[100:150:,2] # Assigning the Virginica Iris Petal Length data for 100 to row 150 in the Third Column
+VirginicadataPetalwidth = data[100:150:,3] # Assigning the Virginica Iris Pepal Width data for 100 to row 150 in the Fourth Column
+
+# Printing each divided data set
+
+print(Setosadata)
+print(Versicolor)
+print(Virginica)
+print('')
+
+# Conduct Normality Test on Each of Iris Classifications and Attributes
+
+# Conducting a Normality Test for the Setosa Iris Data Attributes
+print('Normality Test for the Setosa Iris Data Attributes')
+print('') # Creating a skip line
+k2, p = stats.normaltest(SetosadataSepallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data SetosadataSepallength follows the normal distribution
+     print("We can reject the null hypothesis for SetosadataSepallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for SetosadataSepallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(SetosadataSepalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data SetosadataSepalwidth follows the normal distribution
+     print("We can reject the null hypothesis for SetosadataSepalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for SetosadataSepalwidth the data follows the normal distribution")
+
+k2, p = stats.normaltest(SetosadataPetallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data SetosadataPetallength follows the normal distribution
+     print("We can reject the null hypothesis for SetosadataPetallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for SetosadataPetallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(SetosadataPetalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data SetosadataPetalwidth follows the normal distribution
+     print("We can reject the null hypothesis for SetosadataPetalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for SetosadataPetalwidth the data follows the normal distribution")
+
+
+# Conducting a Normality Test for the Vericolor Iris Data Attributes
+print('Conducting a Normality Test for the Vericolor Iris Data Attributes')
+print('') # Creating a Skip Line
+k2, p = stats.normaltest(VersicolordataSepallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VersicolordataSepallength follows the normal distribution
+     print("We can reject the null hypothesis for VersicolordataSepallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VersicolordataSepallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(VersicolordataSepalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VersicolordataSepalwidth follows the normal distribution
+     print("We can reject the null hypothesis for VersicolordataSepalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VersicolordataSepalwidth the data follows the normal distribution")
+
+k2, p = stats.normaltest(VersicolordataPetallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VersicolordataPetallength follows the normal distribution
+     print("We can reject the null hypothesis for VersicolordataPetallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VersicolordataPetallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(VersicolordataPetalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VersicolordataPetalwidth follows the normal distribution
+     print("We can reject the null hypothesis for VersicolordataPetalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VersicolordataPetalwidth the data follows the normal distribution")
+
+# Conducting a Normality Test for the Virginica Iris Data Attributes
+print ('Conducting a Normality Test for the Virginica Iris Data Attributes')
+print('') # Creating a skip ;ine
+k2, p = stats.normaltest(VirginicadataSepallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VirginicadataSepallength follows the normal distribution
+     print("We can reject the null hypothesis for VirginicadataSepallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VirginicadataSepallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(VirginicadataSepalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VirginicadataSepalwidth follows the normal distribution
+     print("We can reject the null hypothesis for VirginicadataSepalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VirginicadataSepalwidth the data follows the normal distribution")
+
+k2, p = stats.normaltest(VirginicadataPetallength)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VirginicadataPetallength follows the normal distribution
+     print("We can reject the null hypothesis for VirginicadataPetallength the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VirginicadataPetallength the data follows the normal distribution")
+
+k2, p = stats.normaltest(VirginicadataPetalwidth)
+alpha = 5e-2 # Setting the confidence level for alpha at 95%
+print("p = {:g}".format(p))
+if p < alpha:  # null hypothesis: the data VirginicadataPetalwidth follows the normal distribution
+     print("We can reject the null hypothesis for VirginicadataPetalwidth the data does not follows the normal distribution")
+else:
+     print("We can fail to reject the null hypothesis for VirginicadataPetalwidth the data follows the normal distribution")
+
+print('') # Creating a skip line
+
+# Creating Histograms for each Normality Test Conducted
+# Creating Histograms for Setosa Iris Atributes
+
+plt.clf() # Clears axis after plotting graphs and stops graphs overlapping
+plt.hist(SetosadataSepallength)
+plt.title("Setosa Sepal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("SetosadataSepallength.png")
+
+plt.clf()
+plt.hist(SetosadataSepalwidth)
+plt.title("Setosa Sepal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("SetosadataSepalWidth.png")
+
+plt.clf()
+plt.hist(SetosadataPetallength)
+plt.title("Setosa Petal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("SetosadataPetalLength.png")
+
+plt.clf()
+plt.hist(SetosadataPetalwidth)
+plt.title("Setosa Petal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("SetosadataPetalWidth.png")
+
+# Creating Histograms for Versicolor Iris Atributes
+plt.clf()
+plt.hist(VersicolordataSepallength)
+plt.title("Versicolor Sepal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("VersicolordataSepallength.png")
+
+plt.clf()
+plt.hist(VersicolordataSepalwidth)
+plt.title("Versicolor Sepal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("VersicolordataSepalwidth.png")
+
+plt.clf()
+plt.hist(VersicolordataPetallength)
+plt.title("Versicolor Petal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("VersicolordataPetallength.png")
+
+plt.clf()
+plt.hist(VersicolordataPetalwidth)
+plt.title("Versicolor Petal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("VersicolordataPetalwidth.png")
+
+# Creating Histograms for Virginica Iris Atributes
+plt.clf()
+plt.hist(VirginicadataSepallength)
+plt.title("Virginica Sepal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("VirginicadataSepallength.png")
+
+plt.clf()
+plt.hist(VirginicadataSepalwidth)
+plt.title("Virginica Sepal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("VirginicadataSepalwidth.png")
+
+plt.clf()
+plt.hist(VirginicadataPetallength)
+plt.title("Virginica Petal Length")
+plt.xlabel("Length")
+plt.ylabel("Qty")
+plt.savefig("VirginicadataPetallength.png")
+
+plt.clf()
+plt.hist(VirginicadataPetalwidth)
+plt.title("Virginica Petal Width")
+plt.xlabel("Width")
+plt.ylabel("Qty")
+plt.savefig("VirginicadataPetalwidth.png")
+
+
+# Calculating Descriptive Statistics for the Setosa Iris Data Set
+
+print('Descriptive Statistics for the Setosa Iris Data Set')
+print('') # Creating a skip line
+
+print('The Mean of the SetosadataSepallength is',numpy.mean(SetosadataSepallength))
+print('The Standard Deviation of the SetosadataSepallength is',numpy.std(SetosadataSepallength))
+print('The Min Value of the SetosadataSepallength is',numpy.min(SetosadataSepallength))
+print('The Max Value of the SetosadataSepallength is',numpy.max(SetosadataSepallength))
+print('The Mean of the SetosadataSepalwidth is',numpy.mean(SetosadataSepalwidth))
+print('The Standard Deviation of the SetosadataSepalwidth is',numpy.std(SetosadataSepalwidth))
+print('The Min Value of the SetosadataSepalwidth is',numpy.min(SetosadataSepalwidth))
+print('The Max Value of the SetosadataSepalwidth is',numpy.max(SetosadataSepalwidth))
+print('The Mean of the SetosadataPetallength is',numpy.mean(SetosadataPetallength))
+print('The Standard Deviation of the SetosadataPetallength is',numpy.std(SetosadataPetallength))
+print('The Min Value of the SetosadataPetallength is',numpy.min(SetosadataPetallength))
+print('The Max Value of the SetosadataPetallength is',numpy.max(SetosadataPetallength))
+print('The Mean of the SetosadataPetalwidth is',numpy.mean(SetosadataPetalwidth))
+print('The Standard Deviation of the SetosadataPetalwidth is',numpy.std(SetosadataPetalwidth))
+print('The Min Value of the SetosadataPetalwidth is',numpy.min(SetosadataPetalwidth))
+print('The Max Value of the SetosadataPetalwidth is',numpy.max(SetosadataPetalwidth))
+print('') # Creating a skip line
+
+# Calculating the Descriptive Statistics for the Versicolor Iris Data Set
+
+print('Descriptive Statistics for the Versicolor Iris Data Set')
+print('') # Creating a skip line
+
+print('The Mean of the VersicolordataSepallength is',numpy.mean(VersicolordataSepallength))
+print('The Standard Deviation of the VersicolordataSepallength is',numpy.std(VersicolordataSepallength))
+print('The Min Value of the VersicolordataSepallength is',numpy.min(VersicolordataSepallength))
+print('The Max Value of the VersicolordataSepallength is',numpy.max(VersicolordataSepallength))
+print('The Mean of the VersicolordataSepalwidth is',numpy.mean(VersicolordataSepalwidth))
+print('The Standard Deviation of the VersicolordataSepalwidth is',numpy.std(VersicolordataSepalwidth))
+print('The Min Value of the VersicolordataSepalwidth is',numpy.min(VersicolordataSepalwidth))
+print('The Max Value of the VersicolordataSepalwidth is',numpy.max(VersicolordataSepalwidth))
+print('The Mean of the VersicolordataPetallength is',numpy.mean(VersicolordataPetallength))
+print('The Standard Deviation of the VersicolordataPetallength is',numpy.std(VersicolordataPetallength))
+print('The Min Value of the VersicolordataPetallength is',numpy.min(VersicolordataPetallength))
+print('The Max Value of the VersicolordataPetallength is',numpy.max(VersicolordataPetallength))
+print('The Mean of the VersicolordataPetalwidth is',numpy.mean(VersicolordataPetalwidth))
+print('The Standard Deviation of the VersicolordataPetalwidth is',numpy.std(VersicolordataPetalwidth))
+print('The Min Value of the VersicolordataPetalwidth is',numpy.min(VersicolordataPetalwidth))
+print('The Max Value of the VersicolordataPetalwidth is',numpy.max(VersicolordataPetalwidth))
+print('') # Creating a skip line
+
+# Calculating the Descriptive Statistics for the Virginica Iris Data Set
+print('Descriptive Statistics for the Virginica Iris Data Set')
+print('') # Creating a skip line
+
+print('The Mean of the VirginicadataSepallength is',numpy.mean(VirginicadataSepallength))
+print('The Standard Deviation of the VirginicadataSepallength is',numpy.std(VirginicadataSepallength))
+print('The Min Value of the VirginicadataSepallength is',numpy.min(VirginicadataSepallength))
+print('The Max Value of the VirginicadataSepallength is',numpy.max(VirginicadataSepallength))
+print('The Mean of the VirginicadataSepalwidth is',numpy.mean(VirginicadataSepalwidth))
+print('The Standard Deviation of the VirginicadataSepalwidth is',numpy.std(VirginicadataSepalwidth))
+print('The Min Value of the VirginicadataSepalwidth is',numpy.min(VirginicadataSepalwidth))
+print('The Max Value of the VirginicadataSepalwidth is',numpy.max(VirginicadataSepalwidth))
+print('The Mean of the VirginicadataPetallength is',numpy.mean(VirginicadataPetallength))
+print('The Standard Deviation of the VirginicadataPetallength is',numpy.std(VirginicadataPetallength))
+print('The Min Value of the VirginicadataPetallength is',numpy.min(VirginicadataPetallength))
+print('The Max Value of the VirginicadataPetallength is',numpy.max(VirginicadataPetallength))
+print('The Mean of the VirginicadataPetalwidth is',numpy.mean(VirginicadataPetalwidth))
+print('The Standard Deviation of the VirginicadataPetalwidth is',numpy.std(VirginicadataPetalwidth))
+print('The Min Value of the VirginicadataPetalwidth is',numpy.min(VirginicadataPetalwidth))
+print('The Max Value of the VirginicadataPetalwidth is',numpy.max(VirginicadataPetalwidth))
+print('') # Creating a skip line
+
+# Performing 2 Sample - T Test on Means
+print(" 2-sample t test for SetosadataSepallength, VersicolordataSepallength")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataSepallength, VersicolordataSepallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to noas no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataSepallength, VirginicadataSepallength")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataSepallength, VirginicadataSepallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for VersicolordataSepallength, VirginicadataSepallength")
+print('')
+t_stat, p_val = stats.ttest_ind(VersicolordataSepallength, VirginicadataSepallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataSepalwidth, VersicolordataSepalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataSepalwidth, VersicolordataSepalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataSepalwidth, VirginicadataSepalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataSepalwidth, VirginicadataSepalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('') 
+
+print(" 2-sample t test for VersicolordataSepalwidth, VirginicadataSepalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(VersicolordataSepalwidth, VirginicadataSepalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('') 
+
+print(" 2-sample t test for SetosadataPetallength, VersicolordataPetallength")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataPetallength, VersicolordataPetallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataPetallength, VirginicadataPetallength")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataPetallength, VirginicadataPetallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to noas no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for VersicolordataPetallength, VirginicadataPetallength")
+print('')
+t_stat, p_val = stats.ttest_ind(VersicolordataPetallength, VirginicadataPetallength, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to noas no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataPetalwidth, VersicolordataPetalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataPetalwidth, VersicolordataPetalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for SetosadataPetalwidth, VirginicadataPetalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(SetosadataPetalwidth, VirginicadataPetalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+print(" 2-sample t test for VersicolordataPetalwidth, VirginicadataPetalwidth")
+print('')
+t_stat, p_val = stats.ttest_ind(VersicolordataPetalwidth, VirginicadataPetalwidth, equal_var=False) # Performing the 2 Sample t-Test, equal variance is set to no as no variance test performed
+print("The t value of is",t_stat) # Printing the critical t value for the 2 Sample t Test
+print("The p value is",p_val) # Printing the P-Value for the 2 Sample t Test
+if p_val <0.05:
+ print ("There is a Significant Statistical Difference between the Samples")
+else:
+ print("There is no Signifcant Statistical Difference between the Samples ")
+print('')
+
+# Creating Box Plots for each of the 2-sample t tests
+
+Sepallength_to_plot = (SetosadataSepallength, VersicolordataSepallength, VirginicadataSepallength) # Setting the data points for Sepal Length
+Sepalwidth_to_plot = (SetosadataSepalwidth, VersicolordataSepalwidth, VirginicadataSepalwidth) # Setting the data points for Sepal Width
+Petallength_to_plot = (SetosadataPetallength, VersicolordataPetallength, VirginicadataPetallength) # Setting the data points for Petal Length
+Petalwidth_to_plot = (SetosadataPetalwidth, VersicolordataPetalwidth, VirginicadataPetalwidth) # Setting the data points for Petal Width
+
+# Creation of Box Plots for Sepal Length Across Iris'
+plt.clf()
+plt.boxplot(Sepallength_to_plot)
+plt.title('Sepal Length BoxPlots')
+plt.xticks([1, 2, 3], ['Setosa', 'Versicolor', 'Verginica'])
+plt.ylabel('Qty')
+plt.savefig("SepalLengthBoxplots.png")
+
+# Creation of Box Plots for Sepal Width Across Iris'
+plt.clf()
+plt.boxplot(Sepalwidth_to_plot)
+plt.title('Sepal Width BoxPlots')
+plt.xticks([1, 2, 3], ['Setosa', 'Versicolor', 'Verginica'])
+plt.ylabel('Qty')
+plt.savefig("SepalWidthBoxplots.png")
+
+# Creation of Box Plots for Petal Length Across Iris'
+plt.clf()
+plt.boxplot(Petallength_to_plot)
+plt.title('Petal Length BoxPlots')
+plt.xticks([1, 2, 3], ['Setosa', 'Versicolor', 'Verginica'])
+plt.ylabel('Qty')
+plt.savefig("PetalLengthBoxplots.png")
+
+# Creation of Box Plots for Petal Width Across Iris'
+plt.clf()
+plt.boxplot(Petalwidth_to_plot)
+plt.title('Petal Width BoxPlots')
+plt.xticks([1, 2, 3], ['Setosa', 'Versicolor', 'Verginica'])
+plt.ylabel('Qty')
+plt.savefig("PetalWidthBoxplots.png")
