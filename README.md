@@ -14,6 +14,6 @@ Program of Work;
 	- Objectives
 	- Methods
 	- Results
-	- Concluesions
+	- Conclusions
 
-- Submit Project to GitHub
+- Submit Final Report in Word File on Project to GitHub
